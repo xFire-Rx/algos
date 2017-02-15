@@ -40,20 +40,26 @@ int main()
        exit(1);//nothing to do but quit program
   }
  
-for (int x=0;x<inputs.size();x++){
+for (int x=0;x < inputs.size();x++){
 	bubbleSort(inputs);
-	cout<<inputs[x] << endl;
+	if((x % 20000) == 0){
+	cout << x << " Passes are completed" << endl;
+	cout << inputs[x] << endl;
+}
+	else{
+	cout << inputs[x] << endl;
+}
 }
     return 0;
 }
 
 void bubbleSort(auto&data)
 {
-for(int i=0; i<data.size()-1;i++)
+for(int i=0; i < data.size()-1;i++)
 {
-for(int j=0; j<data.size()-1;j++)
+for(int j=0; j < data.size()-1;j++)
 { 	
-if(data[j]>data[j+1])
+if(data[j] > data[j+1])
 {
 swap(data[j],data[j+1]);
 }
